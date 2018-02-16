@@ -11,15 +11,16 @@ _Allows the user to determine word count from a pair of inputs (input 1 is a sin
 _Files can be cloned from https://github.com/chrisswanner/wordCounter and run in a browser (requires a server environment)._
 
 ## Specifications
-| Behavior | Input Example 1 | Input Example 2 |  Output Example  |
+| Behavior | Input Example 1 | Input Example 2 |  Output Example  | Simplicity Justification |
 | -------- |:---------------:|:---------------:|:----------------:|:------------------------ |
-| Detect occurrence of single letter and identical 2nd input | 'a' | 'a' | Frequency: 1 |
-| Detect occurrence of single letter in multiple 2nd input | 'a' | 'a b' | Frequency: 1 |
-| Detect increase frequency of occurrences | 'a' | 'a b a' | Frequency: 2 |
-| Detect occurrence of single word and identical 2nd input | 'and' | 'and' | Frequency: 1 |
-| Detect occurrence of word with multiple 2nd input | 'and' | 'cat and dog' | Frequency: 1 | 
-| Detect occurrence of word with case differences | 'hello' | 'Hello there, I say!' | Frequency: 1 |
-| Detect occurrence if next to punctuation | 'hello' | 'Hello. I say, hello!' | Frequency: 2 |
+| Detect occurrence of single letter and identical 2nd input | 'a' | 'a' | Frequency: 1 | Smallest possible number of occurences |
+| Detect occurrence of single letter in multiple 2nd input | 'a' | 'a b' | Frequency: 1 | Smallest without having to slip the string into an array of words |
+| Detect increase frequency of occurrences | 'a' | 'a b a' | Frequency: 2 | Smallest incremental step - ensures loop captures all occurrences of letter |
+| Detect occurrence of single word and identical 2nd input | 'and' | 'and' | Frequency: 1 | After single letter is functioning - next step is to compare for multi-letter word - Smallest available comparison/test of matching behavior for word - no need to split or loop |
+| Detect occurrence of word with multiple 2nd input | 'and' | 'cat and dog' | Frequency: 1 | Smallest step once matching 1 for 1 letter/word and 1 to 2+ letters is to compare 1 to 2+ words - now beneficial to split into array and loop over each word |
+| Detect occurrence of word with multiple 2nd input | 'and' | 'cat and dog and fish' | Frequency: 2 | Smallest incremental step - ensures loop captures all occurrences of word in similar pattern to single letter spec above |
+| Detect occurrence of word with case differences | 'hello' | 'Hello there, I say!' | Frequency: 1 | Ensures method catches case difference but doesn't necessarily address special characters or punctuation. |
+| Detect occurrence if next to punctuation | 'hello' | 'Hello. I say, hello!' | Frequency: 2 | Logical next step -ensures method catches a match when typical punctuation is used, but doesn't necessarily account for other unforeseen special characters. |
 
 
 ## Known Bugs
