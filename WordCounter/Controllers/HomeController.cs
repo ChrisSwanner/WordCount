@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
-using Template.Models;
+using WordCounter.Models;
 
-namespace Template.Controllers
+namespace WordCounter.Controllers
 {
 
 
