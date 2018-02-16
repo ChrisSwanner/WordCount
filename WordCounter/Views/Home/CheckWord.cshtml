@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+
+	<h1>Word Entered!</h1>
+
+	<p>Search Word: @Model.GetSearchWord()</p>
+	<p>Phrase: @Model.GetPhrase()</p>
+	<p>Your word shows up @Model.GetCount() times in this phrase.</p>
+	<a href="/"><button class="btn btn-info" type="button" name="back-button">Return</button></a>
+</div>
